@@ -155,3 +155,63 @@ main {
   width: 80px;
   height: 80px;
 }
+
+/* MOVIL */
+@media (max-width: 600px) {
+  body {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 20px;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    width: auto;
+    height: auto;
+  }
+
+  main {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .credito {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .informacion {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .boton {
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 0;
+  }
+
+  .ingresaN,
+  .ingresaF {
+    margin-top: 10px;
+  }
+
+  .ingresaN label,
+  .ingresaF label {
+    margin-right: 10px;
+  }
+
+  .ingresaF img {
+    width: 60px;
+    height: 60px;
+  }
+}
