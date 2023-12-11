@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
+    <meta charset="utf-8" />
+    <title>Valida tus Tarjetas</title>
+    <link rel="icon" href="./imagenes/logo.jpg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+      <h1>VALIDA TU TARJETA</h1>
+    </header>
+    <main>
+      <div class="informacion">
+        <h2>Ingresa el Numero</h2>
+        <div class="ingresaN">
+          <label>
+            <input type="primeros4n" />
+          </label>
+          <label>
+            <input type="segundos4n" />
+          </label>
+          <label>
+            <input type="terceros4n" />
+          </label>
+          <label>
+            <input type="ultimos4n" />
+          </label>
+        </div>
+        <h2>Elige la Franquicia</h2>
+        <div class="ingresaF">
+          <label>
+            <input type="radio" name="franquicia" value="visa" />
+            <img src="./Imagenes/visa.png" alt="Visa" />
+          </label>
+          <label>
+            <input type="radio" name="franquicia" value="mastercard" />
+            <img src="./Imagenes/mastercard.jpg" alt="Mastercard" />
+          </label>
+          <label>
+            <input type="radio" name="franquicia" value="americanexpress" />
+            <img src="./Imagenes/americanexpress.png" alt="Mastercard" />
+          </label>
+          <label>
+            <input type="radio" name="franquicia" value="dinersclub" />
+            <img src="./Imagenes/dinersclub.png" alt="Mastercard" />
+          </label>
+        </div>
+      </div>
+      <button class="boton">Validar</button>
+    </main>
+    <footer class="credito">Desarrolladora O.Lucia Duran</footer>
     <script src="index.js" type="module"></script>
   </body>
 </html>
