@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Valida tus Tarjetas</title>
-    <link rel="icon" href="./imagenes/logo.png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>VALIDA TU TARJETA</h1>
-    </header>
-    <main>
-      <div class="informacion">
-        <h2>Ingresa el Numero</h2>
-        <div class="ingresaN">
-          <label>
-            <input type="primeros4n" />
-          </label>
-          <label>
-            <input type="segundos4n" />
-          </label>
-          <label>
-            <input type="terceros4n" />
-          </label>
-          <label>
-            <input type="ultimos4n" />
-          </label>
-        </div>
-        <h2>Elige la Franquicia</h2>
-        <div class="ingresaF">
-          <label>
-            <input type="radio" name="franquicia" value="visa" />
-            <img src="./Imagenes/visa.png" alt="Visa" />
-          </label>
-          <label>
-            <input type="radio" name="franquicia" value="mastercard" />
-            <img src="./Imagenes/mastercard.jpg" alt="Mastercard" />
-          </label>
-          <label>
-            <input type="radio" name="franquicia" value="americanexpress" />
-            <img src="./Imagenes/americanexpress.png" alt="Mastercard" />
-          </label>
-          <label>
-            <input type="radio" name="franquicia" value="dinersclub" />
-            <img src="./Imagenes/dinersclub.png" alt="Mastercard" />
-          </label>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Valida tus Tarjetas</title>
+  <link rel="icon" href="./imagenes/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>VALIDA TU TARJETA</h1>
+  </header>
+  <main>
+    <div class="informacion">
+      <h2>Ingresa el Numero</h2>
+      <div class="ingresaN">
+        <label>
+          <input id="primeros4n" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" />
+        </label>
+        <label>
+          <input id="segundos4n" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" />
+        </label>
+        <label>
+          <input id="terceros4n" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" />
+        </label>
+        <label>
+          <input id="ultimos4n" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" />
+        </label>
       </div>
-      <button class="boton">Validar</button>
-    </main>
-    <footer class="credito">Desarrolladora O.Lucia Duran</footer>
-    <script src="index.js" type="module"></script>
-  </body>
-</html>
+      <h2>Elige la Franquicia</h2>
+      <div class="ingresaF">
+        <label>
+          <input id="visa" type="radio" name="franquicia" value="visa" />
+          <img src="./Imagenes/visa.png" alt="Visa" />
+        </label>
+        <label>
+          <input id="masterC" type="radio" name="franquicia" value="mastercard" />
+          <img src="./Imagenes/mastercard.jpg" alt="Mastercard" />
+        </label>
+        <label>
+          <input id="americanE" type="radio" name="franquicia" value="americanexpress" />
+          <img src="./Imagenes/americanexpress.png" alt="Mastercard" />
+        </label>
+        <label>
+          <input id="dinersC" type="radio" name="franquicia" value="dinersclub" />
+          <img src="./Imagenes/dinersclub.png" alt="Mastercard" />
+        </label>
+      </div>
+    </div>
+    <button id="validar" class="boton">Validar</button>
+  </main>
+  <footer class="credito">Desarrolladora O.Lucia Duran</footer>
+  <script src="index.js" type="module"></script>
+</body>
+</html
