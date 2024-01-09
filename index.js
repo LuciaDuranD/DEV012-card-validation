@@ -1,31 +1,64 @@
 import validator from "./validator.js";
 
-console.log(validator);
-
 document.addEventListener("DOMContentLoaded", () => {
-  const botonValidar = document.getElementById("validar");
-  const primeros4 = document.getElementById("primeros4n");
-  const segundos4 = document.getElementById("segundos4n");
-  const terceros4 = document.getElementById("terceros4n");
-  const ultimos4 = document.getElementById("ultimos4n");
+  const todos = document.getElementById("todos");
   const visa = document.getElementById("visa");
   const master = document.getElementById("masterC");
   const american = document.getElementById("americanE");
   const diners = document.getElementById("dinersC");
 
-  //BOTON DE VALIDAR//
-  const borrarDatos = () => {
-    //INGRESAN//
-    primeros4.value = "";
-    segundos4.value = "";
-    terceros4.value = "";
-    ultimos4.value = "";
-    //INGRESAF//
+  const validarTarjeta = () => {
+    const numeroTarjeta = todos.value.trim();
+
+    //MENSAJE POR SI NO INGRESA NADA//
+    if (!numeroTarjeta) {
+      alert("No ingresaste ningún número");
+      return;
+    }
+
+    if (validator.isValid(numeroTarjeta)) {
+      const numeroEnmascarado = validator.maskify(numeroTarjeta);
+      //MENSAJE DONDE CUMPLE CON LOS REQUERIMIENTOS//
+      alert("El número de tarjeta es válido" + numeroEnmascarado);
+    } else {
+      //MENSAJE POR SI NO CUMPLE CON LOS REQUERIMIENTOS//
+      alert("El número de tarjeta no es válido");
+    }
+
+    let mensajeFranquicia = "";
+
+    if (visa.checked) {
+      mensajeFranquicia += "Visa ";
+    }
+    if (master.checked) {
+      mensajeFranquicia += "Mastercard ";
+    }
+    if (american.checked) {
+      mensajeFranquicia += "American Express ";
+    }
+    if (diners.checked) {
+      mensajeFranquicia += "Diners Club ";
+    }
+
+    if (!mensajeFranquicia) {
+      //MENSAJE POR SI NO SELECCIONO UNA FRANQUICIA//
+      mensajeFranquicia = "No seleccionaste ninguna franquicia";
+    }
+
+    alert(mensajeFranquicia);
+  };
+
+  const borrar = () => {
+    todos.value = "";
     visa.checked = false;
     master.checked = false;
     american.checked = false;
     diners.checked = false;
   };
 
-  botonValidar.addEventListener("click", borrarDatos);
+  const botonBorrar = document.getElementById("borrar");
+  botonBorrar.addEventListener("click", borrar);
+
+  const botonValidar = document.getElementById("validar");
+  botonValidar.addEventListener("click", validarTarjeta);
 });
