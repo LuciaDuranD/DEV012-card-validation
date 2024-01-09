@@ -24,14 +24,18 @@ const validator = {
   },
 
   maskify: function (numeros) {
-    if (typeof numeros !== "string" || numeros.length !== 16) {
+    if (typeof numeros !== "string") {
       return false;
+    }
+
+    if (numeros.length <= 4) {
+      return numeros;
     }
 
     let enmascarado = "";
 
     for (let i = 0; i < numeros.length - 4; i++) {
-      enmascarado += "*";
+      enmascarado += "#";
     }
 
     const ultimosCuatro = numeros.slice(-4);

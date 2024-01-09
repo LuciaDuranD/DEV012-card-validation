@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const validarTarjeta = () => {
     const numeroTarjeta = todos.value.trim();
 
+    //MENSAJE POR SI NO INGRESA NADA//
     if (!numeroTarjeta) {
       alert("No ingresaste ningún número");
       return;
@@ -17,8 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (validator.isValid(numeroTarjeta)) {
       const numeroEnmascarado = validator.maskify(numeroTarjeta);
+      //MENSAJE DONDE CUMPLE CON LOS REQUERIMIENTOS//
       alert("El número de tarjeta es válido" + numeroEnmascarado);
     } else {
+      //MENSAJE POR SI NO CUMPLE CON LOS REQUERIMIENTOS//
       alert("El número de tarjeta no es válido");
     }
 
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!mensajeFranquicia) {
+      //MENSAJE POR SI NO SELECCIONO UNA FRANQUICIA//
       mensajeFranquicia = "No seleccionaste ninguna franquicia";
     }
 
